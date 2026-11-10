@@ -1,0 +1,18 @@
+/* Base de Gym Sessions v2: colores, tipografía y la cabecera (el lenguaje de la v1, ordenado). */
+:root {
+  --fondo: #0A0E1A; --panel: #121933; --pista: #1B2440; --linea: #2A3450;
+  --texto: #EDF1F9; --texto-2: #B7C0D8; --apagado: #5B7099;
+  --trabajo: #5B8CFF; --descanso: #FFB020; --prep: #5FCB8F;
+  --serie-1: #5B8CFF; --serie-2: #FFB020; --serie-3: #5FCB8F; --serie-4: #C77DFF; --serie-5: #FF6B81;
+  --escala: 1;
+}
+* { box-sizing: border-box; margin: 0; }
+html, body { height: 100%; }
+body { background: var(--fondo); color: var(--texto); font-family: 'Inter', system-ui, sans-serif; font-size: calc(16px * var(--escala)); }
+.cifra { font-family: 'Orbitron', sans-serif; font-variant-numeric: tabular-nums; }
+.cabecera { display: flex; align-items: center; gap: .8rem; padding: 1rem 1.5rem; border-bottom: 1px solid var(--linea); }
+.cabecera .logo { width: 2.2rem; height: 2.2rem; border-radius: .6rem; display: grid; place-items: center; background: linear-gradient(135deg, var(--trabajo), #3D5FD9); }
+.cabecera h1 { font-size: 1.1rem; letter-spacing: .08em; text-transform: uppercase; }
+.cabecera .dia { margin-left: auto; padding: .35rem .8rem; border-radius: 999px; font-weight: 800; font-size: .8rem; letter-spacing: .1em; }
+.boton { background: var(--panel); color: var(--texto); border: 1px solid var(--linea); border-radius: .8rem; padding: .7rem 1.1rem; font: inherit; font-weight: 700; cursor: pointer; display: inline-flex; gap: .5rem; align-items: center; }
+.boton.principal { background: var(--trabajo); border-color: transparent; }

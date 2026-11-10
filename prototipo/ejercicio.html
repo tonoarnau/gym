@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gym Sessions · prototipo de la pantalla del ejercicio (v2)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Orbitron:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/ejercicio.css">
+</head>
+<body>
+  <header class="cabecera">
+    <div class="logo" aria-hidden="true">🏋</div>
+    <h1>Gym Sessions</h1>
+    <span class="dia" style="background: color-mix(in srgb, var(--trabajo) 22%, transparent); color: var(--trabajo)">DÍA A · Tren superior + Core</span>
+  </header>
+  <main id="pantalla" class="ejercicio"></main>
+  <script type="module">
+    import { montar } from '../js/pantalla-ejercicio.js';
+    const params = new URLSearchParams(location.search);
+    const reloj = montar(document.getElementById('pantalla'), params.get('dia') ?? 'A');
+    // ?saltar=N: avanza N pasos (para las capturas de revisión)
+    for (let i = 0; i < Number(params.get('saltar') ?? 0); i++) reloj.saltar();
+  </script>
+</body>
+</html>
